@@ -1,5 +1,5 @@
 package ca.crystalshard.domain;
 
-public interface Sourceable<T> extends Queryable<T> {
-    Filterable<T> from(TableDefinition... tables);
+public interface Sourceable extends Queryable {
+    Filterable from(TableDefinition... tables);
 }

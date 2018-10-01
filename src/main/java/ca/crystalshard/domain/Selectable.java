@@ -1,5 +1,5 @@
 package ca.crystalshard.domain;
 
-public interface Selectable<T> extends Queryable<T> {
-    Sourceable<T> select(ColumnDefinition... columns);
+public interface Selectable extends Queryable {
+    Sourceable select(ColumnDefinition... columns);
 }
