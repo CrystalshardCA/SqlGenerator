@@ -1,5 +1,5 @@
 package ca.crystalshard.domain;
 
-public interface Filterable<T> extends Queryable<T> {
-    Orderable<T> where(WhereClause... whereClauses);
+public interface Filterable extends Queryable {
+    Orderable where(WhereClause... whereClauses);
 }

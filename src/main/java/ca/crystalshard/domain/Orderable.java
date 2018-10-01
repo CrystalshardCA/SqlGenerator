@@ -1,5 +1,5 @@
 package ca.crystalshard.domain;
 
-public interface Orderable<T> extends Queryable<T> {
-    Queryable<T> orderby(OrderDefinition... orderDefinitions);
+public interface Orderable extends Queryable {
+    Queryable orderby(OrderDefinition... orderDefinitions);
 }
