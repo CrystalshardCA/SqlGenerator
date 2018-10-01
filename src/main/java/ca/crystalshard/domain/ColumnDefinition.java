@@ -6,4 +6,6 @@ public interface ColumnDefinition {
     Optional<String> getTableName();
     String getColumnName();
     Optional<String> getColumnAlias();
+
+    String getStringRepresentation();
 }
