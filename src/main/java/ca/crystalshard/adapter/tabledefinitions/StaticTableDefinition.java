@@ -11,7 +11,7 @@ public class StaticTableDefinition implements TableDefinition {
     }
 
     private final String tableName;
-    private final String tableAlias;
+    private String tableAlias;
 
     private StaticTableDefinition(String tableName, String tableAlias) {
         this.tableName = tableName;
@@ -26,5 +26,21 @@ public class StaticTableDefinition implements TableDefinition {
     @Override
     public Optional<String> getTableAlias() {
         return Optional.ofNullable(this.tableAlias);
+    }
+
+    @Override
+    public String getStringRepresentation() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.tableName);
+        if (getTableAlias().isPresent()) {
+            sb.append(String.format(" %s", this.tableAlias));
+        }
+        return sb.toString();
+    }
+
+    @Override
+    public TableDefinition as(String alias) {
+        tableAlias = alias;
+        return this;
     }
 }
