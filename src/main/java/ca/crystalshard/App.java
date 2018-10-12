@@ -1,6 +1,6 @@
 package ca.crystalshard;
 
-import ca.crystalshard.adapter.SqlGenerator;
+import ca.crystalshard.adapter.MySqlGenerator;
 import ca.crystalshard.domain.Selectable;
 
 import static ca.crystalshard.adapter.columndefinitions.StaticColumnDefinition.col;
@@ -13,7 +13,7 @@ import static ca.crystalshard.adapter.whereclauses.StaticWhereClause.equal;
  */
 public class App {
     public static void main(String[] args) {
-        Selectable data = new SqlGenerator();
+        Selectable data = new MySqlGenerator();
         String sql = data
                 .select(col("one"), col("two"), col("three"))
                 .from(tbl("table"))
